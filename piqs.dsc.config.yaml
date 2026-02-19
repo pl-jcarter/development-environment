@@ -1,0 +1,36 @@
+$schema: https://aka.ms/dsc/schema/v3/bundled/config/document.json
+resources:
+
+  # TODO have DSC run  Set-WSManQuickConfig this is needed by the PSDesiredStateConfiguration/WindowsFeature step
+  # - name: Enable WSManQuickConfig
+  #   type: Microsoft.Windows/WindowsPowerShell
+  #   properties:
+  #     resources:
+  #       - name: Enable WSManQuickConfig
+  #         type: Script
+  #         properties:
+  #           Name: WinRM-IIS-Ext
+  #           Ensure: Present
+
+    # DSC doesn't have a "WindowsFeature" resource use the classic PSDSC resource `WindowsFeature`
+  # - name: Enable IIS
+  #   type: Microsoft.Windows/WindowsPowerShell
+  #   properties:
+  #     resources:
+  #       - name: Enable IIS
+  #         type: PSDesiredStateConfiguration/WindowsFeature
+  #         properties:
+  #           Name: Web-Server
+  #           Ensure: Present
+
+  # TODO run Disable-PSRemoting -Force to disable WinRM after configuration is done
+
+  #TODO needed to run 'dism /online /enable-feature /featurename:IIS-ASPNET45 /all'
+
+  
+  # Needed for testing script that publishes AzureBatch package.
+  - name: Azure CLI
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Microsoft.AzureCLI
+      

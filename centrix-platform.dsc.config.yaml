@@ -1,0 +1,9 @@
+$schema: https://aka.ms/dsc/schema/v3/bundled/config/document.json
+resources:
+
+  - name: Postgres 16
+    type: Microsoft.WinGet/Package
+    properties:
+      id: PostgreSQL.PostgreSQL.16
+      installMode: interactive
+      # The password is defaulted to "postgres" but it is recommended to change it after installation.

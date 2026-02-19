@@ -1,0 +1,70 @@
+$schema: https://aka.ms/dsc/schema/v3/bundled/config/document.json
+resources:
+  - name: Node
+    type: Microsoft.WinGet/Package
+    properties:
+      id: OpenJS.NodeJS
+
+  - name: PowerShell7
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Microsoft.PowerShell
+
+  - name: NotepadPlusPlus
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Notepad++.Notepad++
+
+  - name: Slack
+    type: Microsoft.WinGet/Package
+    properties:
+      id: SlackTechnologies.Slack
+
+  # Detection is not working for SQL Server 2025 Developer. DSC tries to install even if already installed
+  # - name: SQL Service 2025 Developer
+  #   type: Microsoft.WinGet/Package
+  #   properties:
+  #     id: Microsoft.SQLServer.2025.Developer
+
+  # TODO Needed to enable SQL Server Authentication
+
+  - name: SSMS 22
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Microsoft.SQLServerManagementStudio.22
+      installMode: interactive
+
+  # - name: Dotnet SDK 8
+  #   type: Microsoft.WinGet/Package
+  #   properties:
+  #     id: Microsoft.DotNet.SDK.8
+
+  - name: Visual Studio
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Microsoft.VisualStudio.Enterprise
+
+  - name: Zoom
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Zoom.Zoom
+
+  - name: Azure Storage Explorer
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Microsoft.Azure.StorageExplorer
+
+
+  # JC Personal additions
+  - name: Firefox
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Mozilla.Firefox
+      installMode: interactive
+      
+  - name: GitKraken
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Axosoft.GitKraken
+
+

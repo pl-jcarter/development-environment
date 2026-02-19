@@ -83,3 +83,8 @@ DSC is idempotent - you can re-run any configuration file after adding new items
 ```powershell
 dsc config set -f .\devtools.dsc.config.yaml
 ```
+
+To do a DryRun:
+```powershell
+dsc config test -f .\devtools.dsc.config.yaml
+```
