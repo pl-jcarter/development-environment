@@ -88,3 +88,7 @@ To do a DryRun:
 ```powershell
 dsc config test -f .\devtools.dsc.config.yaml
 ```
+Or (Read Friendly)
+```powershell
+dsc config test -f .\devtools.dsc.config.yaml -o json | ConvertFrom-Json | Select-Object -ExpandProperty results | Select-Object name, @{Name='inDesiredState';Expression={$_.result.inDesiredState}}
+```

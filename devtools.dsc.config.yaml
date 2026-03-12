@@ -67,4 +67,12 @@ resources:
     properties:
       id: Axosoft.GitKraken
 
+  - name: Python 3.14
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Python.Python.3.14
 
+  - name: Postman
+    type: Microsoft.WinGet/Package
+    properties:
+      id: Postman.Postman
